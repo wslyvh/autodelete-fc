@@ -1,10 +1,5 @@
 import { ImageResponse } from "next/og";
-import {
-  APP_EMOJI,
-  APP_NAME,
-  APP_DESCRIPTION,
-  SOCIAL_FARCASTER,
-} from "@/utils/config";
+import { APP_EMOJI } from "@/utils/config";
 
 export const runtime = "edge";
 
