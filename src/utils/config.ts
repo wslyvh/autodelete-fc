@@ -8,9 +8,9 @@ export const APP_URL =
   process.env.NEXT_PUBLIC_APP_URL || `https://${APP_DOMAIN}`;
 
 // More info // https://miniapps.farcaster.xyz/docs/specification#frame
-export const APP_ICON = `${APP_URL}/icon.png`; // 1024 x 1024 for Farcaster
-export const APP_IMAGE = `${APP_URL}/image.png`; // 1200 x 800 for Farcaster
-export const APP_OG_IMAGE = `${APP_URL}/og.png`; // 1200 x 630 for Open Graph + Twitter. Can replace with /opengraph-image
+export const APP_ICON = `${APP_URL}/api/images/icon`; // 1024 x 1024 for Farcaster
+export const APP_IMAGE = `${APP_URL}/api/images/image`; // 1200 x 800 for Farcaster
+export const APP_OG_IMAGE = `${APP_URL}/api/images/og`; // 1200 x 630 for Open Graph + Twitter. Can replace with /opengraph-image
 export const APP_WEBHOOK = `${APP_URL}/api/webhook`;
 export const APP_FRAME_VERSION = "next";
 export const APP_FRAME_PRIMARY_CATEGORY = "utility";
