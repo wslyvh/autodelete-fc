@@ -1,8 +1,9 @@
-export const APP_EMOJI = "💦";
-export const APP_NAME = "Fapp Starter";
-export const APP_DESCRIPTION = "Quickly ship Farcaster Apps";
+export const APP_EMOJI = "🗑️";
+export const APP_NAME = "Auto Delete";
+export const APP_DESCRIPTION =
+  "Automatically delete your old casts from Farcaster";
 export const APP_DOMAIN =
-  process.env.NEXT_PUBLIC_APP_DOMAIN || "fapp.nexth.dev";
+  process.env.NEXT_PUBLIC_APP_DOMAIN || "farcaster.autodelete.me";
 export const APP_URL =
   process.env.NEXT_PUBLIC_APP_URL || `https://${APP_DOMAIN}`;
 
@@ -13,7 +14,7 @@ export const APP_OG_IMAGE = `${APP_URL}/og.png`; // 1200 x 630 for Open Graph + 
 export const APP_WEBHOOK = `${APP_URL}/api/webhook`;
 export const APP_FRAME_VERSION = "next";
 export const APP_FRAME_PRIMARY_CATEGORY = "utility";
-export const APP_FRAME_TAGS = ["farcaster", "app"];
+export const APP_FRAME_TAGS = ["farcaster", "delete", "privacy"];
 
 export const FARCASTER_ACCOUNT_ASSOCIATION = {
   header:
@@ -25,6 +26,6 @@ export const FARCASTER_ACCOUNT_ASSOCIATION = {
 
 export const SOCIAL_TWITTER = "wslyvh";
 export const SOCIAL_FARCASTER = "wslyvh.eth";
-export const SOCIAL_GITHUB = "wslyvh/fapp-starter";
+export const SOCIAL_GITHUB = "wslyvh/autodelete-fc";
 
 export const DEFAULT_CACHE_TIME = 24 * 60 * 60 * 1000; // 24-hrs (e.g. user context)
