@@ -1,3 +1,12 @@
+import { StorageUnits } from "@/components/units";
+import { Usage } from "@/components/usage";
+
 export default function Home() {
-  return <div>Hello World</div>;
+  return (
+    <div className="flex flex-col gap-4">
+      <Usage />
+
+      <StorageUnits />
+    </div>
+  );
 }
