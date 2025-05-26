@@ -12,14 +12,17 @@ export function StorageUnits({ className }: { className?: string }) {
 
   const { data, isLoading } = useStorageInfo();
 
-  if (isLoading) return <div>Loading...</div>;
-
-  if (!data) return <div>No data</div>;
+  if (isLoading)
+    return <div className="stats bg-base-200 rounded-xl h-24 skeleton"></div>;
 
   return (
     <div className={classes}>
       {/* Storage usage Stats */}
-      <div className="stats w-full bg-base-200 rounded-xl">
+      <div
+        className={`stats w-full bg-base-200 rounded-xl ${
+          isLoading ? "skeleton" : ""
+        }`}
+      >
         <div className="stat">
           <div className="stat-figure text-primary">
             <svg
@@ -51,30 +54,32 @@ export function StorageUnits({ className }: { className?: string }) {
           </div>
           <div className="stat-title">Active Storage Units</div>
           <div className="stat-value">
-            {data.storage.total_active_units ?? 0}
+            {data.storage.total_active_units ?? ""}
           </div>
         </div>
       </div>
 
       {/* Allocations Table */}
-      <div className="overflow-x-auto">
-        <table className="table table-sm w-full">
-          <thead>
-            <tr>
-              <th className="w-24">Units</th>
-              <th>Expiry Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data?.storage.allocations.map((i: any, index: number) => (
-              <tr key={`allocation-${index}-${i.timestamp}`}>
-                <td>{i.units}</td>
-                <td>{dayjs(i.expiry).format("YYYY-MM-DD HH:mm")}</td>
+      {data.storage.allocations.length > 0 && (
+        <div className="overflow-x-auto">
+          <table className="table table-sm w-full">
+            <thead>
+              <tr>
+                <th className="w-24">Units</th>
+                <th>Expiry Date</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {data.storage.allocations.map((i: any, index: number) => (
+                <tr key={`allocation-${index}-${i.timestamp}`}>
+                  <td>{i.units}</td>
+                  <td>{dayjs(i.expiry).format("YYYY-MM-DD HH:mm")}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 }

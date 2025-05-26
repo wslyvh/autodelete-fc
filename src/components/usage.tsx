@@ -12,7 +12,7 @@ export function Usage({ className }: { className?: string }) {
 
   const { data, isLoading } = useStorageInfo();
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <div className="text-xs text-center">Loading...</div>;
 
   if (!data) return <div>No data</div>;
 

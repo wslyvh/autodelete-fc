@@ -4,9 +4,8 @@ import { Usage } from "@/components/usage";
 export default function Home() {
   return (
     <div className="flex flex-col gap-4">
-      <Usage />
-
       <StorageUnits />
+      <Usage />
     </div>
   );
 }
