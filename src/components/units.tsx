@@ -15,6 +15,8 @@ export function StorageUnits({ className }: { className?: string }) {
   if (isLoading)
     return <div className="stats bg-base-200 rounded-xl h-24 skeleton"></div>;
 
+  if (!data) return null;
+
   return (
     <div className={classes}>
       {/* Storage usage Stats */}
