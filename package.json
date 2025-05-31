@@ -7,7 +7,8 @@
     "tunnel": "ngrok http 3000 --log=stdout",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "delete": "tsx src/scripts/delete.ts"
   },
   "dependencies": {
     "@farcaster/frame-sdk": "^0.0.41",
@@ -17,6 +18,7 @@
     "@tanstack/react-query": "^5.76.1",
     "@upstash/redis": "^1.34.9",
     "dayjs": "^1.11.13",
+    "dotenv": "^16.5.0",
     "hls.js": "^1.5.20",
     "next": "15.3.2",
     "react": "^19.0.0",
@@ -35,6 +37,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
     "tailwindcss": "^4",
+    "tsx": "^4.19.4",
     "typescript": "^5"
   }
 }
