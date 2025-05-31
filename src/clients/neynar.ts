@@ -89,6 +89,7 @@ export async function registerSigner(params: RegisterSignerParams) {
       method: "POST",
       headers: {
         "x-api-key": process.env.NEYNAR_API_KEY,
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         public_key: params.public_key,
